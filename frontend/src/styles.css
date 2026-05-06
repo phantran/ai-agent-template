@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-sans);
+  background: #fafaf9;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+textarea,
+input {
+  font: inherit;
+}
+
+.markdown-message {
+  overflow-wrap: anywhere;
+}
+
+.markdown-message > :first-child {
+  margin-top: 0;
+}
+
+.markdown-message > :last-child {
+  margin-bottom: 0;
+}
+
+.markdown-message p,
+.markdown-message ul,
+.markdown-message ol,
+.markdown-message blockquote,
+.markdown-message pre,
+.markdown-message table {
+  margin-block: 0.7rem;
+}
+
+.markdown-message h1,
+.markdown-message h2,
+.markdown-message h3 {
+  margin-block: 0.9rem 0.45rem;
+  font-weight: 650;
+  line-height: 1.25;
+}
+
+.markdown-message h1 {
+  font-size: 1.15rem;
+}
+
+.markdown-message h2 {
+  font-size: 1.05rem;
+}
+
+.markdown-message h3 {
+  font-size: 1rem;
+}
+
+.markdown-message ul,
+.markdown-message ol {
+  padding-left: 1.25rem;
+}
+
+.markdown-message ul {
+  list-style: disc;
+}
+
+.markdown-message ol {
+  list-style: decimal;
+}
+
+.markdown-message li + li {
+  margin-top: 0.25rem;
+}
+
+.markdown-message blockquote {
+  border-left: 3px solid #d4d4d8;
+  color: #52525b;
+  padding-left: 0.85rem;
+}
+
+.markdown-message pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}

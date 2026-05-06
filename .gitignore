@@ -1,0 +1,20 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+.coverage
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.venv/
+.qdrant/
+node_modules/
+__pycache__/
+*.egg-info/
+dist/
+htmlcov/
+
+# Frontend build / TS compile artifacts (sources are .ts/.tsx)
+frontend/dist/
+frontend/src/**/*.js
+!frontend/src/**/*.config.js

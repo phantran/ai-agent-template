@@ -1,0 +1,3 @@
+{"id": "launch-checklist", "input": "List five things a production AI agent must have before launch.", "must_include_any": ["evals", "tracing", "auth", "rate", "rollback", "monitor"], "must_exclude": []}
+{"id": "concise-style", "input": "Reply with the single word: ready", "must_include_any": ["ready"], "must_exclude": ["I'm sorry"]}
+{"id": "rag-grounding", "input": "If you have no retrieval context, say so explicitly.", "must_include_any": ["context", "no", "missing", "insufficient"], "must_exclude": []}

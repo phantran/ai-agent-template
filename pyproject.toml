@@ -1,0 +1,96 @@
+[project]
+name = "ai-agent-template"
+version = "0.1.0"
+description = "Opinionated production-grade scaffold for FastAPI, LangChain, and LangGraph AI agents."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "AI Agent Template Contributors" }]
+keywords = ["ai-agent", "fastapi", "langchain", "langgraph", "llm", "agents"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Framework :: FastAPI",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Typing :: Typed",
+]
+dependencies = [
+  "fastapi[standard]>=0.136.0,<1.0.0",
+  "langchain>=1.2.0,<2.0.0",
+  "langchain-community>=0.4.0,<1.0.0",
+  "langchain-groq>=1.0.0,<2.0.0",
+  "langchain-openai>=1.2.0,<2.0.0",
+  "langchain-qdrant>=1.0.0,<2.0.0",
+  "langchain-text-splitters>=1.1.0,<2.0.0",
+  "langgraph>=1.1.0,<2.0.0",
+  "fastembed>=0.7.0,<1.0.0",
+  "opentelemetry-api>=1.41.0,<2.0.0",
+  "opentelemetry-exporter-otlp>=1.41.0,<2.0.0",
+  "opentelemetry-instrumentation-fastapi>=0.62b0,<1.0.0",
+  "opentelemetry-sdk>=1.41.0,<2.0.0",
+  "pydantic>=2.13.0,<3.0.0",
+  "pydantic-settings>=2.14.0,<3.0.0",
+  "pypdf>=6.4.0,<7.0.0",
+  "python-json-logger>=4.1.0,<5.0.0",
+  "qdrant-client>=1.16.0,<2.0.0",
+  "structlog>=25.5.0,<26.0.0",
+  "tenacity>=9.0.0",
+]
+
+[project.optional-dependencies]
+postgres = [
+  "asyncpg>=0.30.0",
+  "psycopg[binary,pool]>=3.2.0",
+]
+redis = ["redis>=5.1.0"]
+
+[dependency-groups]
+dev = [
+  "httpx>=0.28.0,<1.0.0",
+  "mypy>=1.20.0,<2.0.0",
+  "pre-commit>=4.6.0,<5.0.0",
+  "pytest>=9.0.0,<10.0.0",
+  "pytest-asyncio>=1.3.0,<2.0.0",
+  "pytest-cov>=7.1.0,<8.0.0",
+  "ruff>=0.15.0,<1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/your-org/ai-agent-template"
+Issues = "https://github.com/your-org/ai-agent-template/issues"
+
+[tool.uv]
+package = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["A", "ASYNC", "B", "C4", "E", "F", "I", "N", "PERF", "PT", "RUF", "S", "SIM", "UP", "W"]
+ignore = [
+  "S101",
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+plugins = ["pydantic.mypy"]
+
+[tool.pytest.ini_options]
+addopts = "-q --cov=ai_agent_template --cov-report=term-missing"
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["ai_agent_template"]
